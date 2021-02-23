@@ -1,1 +1,1 @@
-from SimpleJenkinsAPI.api import JenkinsAPI
+from SimpleJenkinsAPI.main import SimpleJenkinsAPIs as Jenkins

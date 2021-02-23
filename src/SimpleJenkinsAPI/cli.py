@@ -1,10 +1,9 @@
-"""Preprocessor for JCasC bundles."""
 # Pylint inline disabling of unsubscriptable-object due to bug in 2.6.0
 
 import argparse
 import sys
 
-from SimpleJenkinsAPI import JenkinsAPI, __metadata__
+from SimpleJenkinsAPI import Jenkins, __metadata__
 
 
 def _cli() -> argparse.ArgumentParser:
@@ -26,7 +25,7 @@ def _cli() -> argparse.ArgumentParser:
 def run():
     options = _cli()
     print(
-        JenkinsAPI().get(
+        Jenkins().api(
             options.path, depth=options.depth, tree=options.tree, pretty=options.pretty
         )
     )
